@@ -1,0 +1,48 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Thesis:	
+% Thema:	
+% Name:		
+% e-Mail:	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%-----------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Anhang %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{figure}{0}
+\renewcommand{\thesection}{\Alph{section}}
+\renewcommand{\thefigure}{{\Alph{section}\arabic{figure}}}
+\appendix
+\addchap{Anhang}
+%-----------------------------------------------------------------------
+%-----------------------------------------------------------------------
+% A. DVD
+%-----------------------------------------------------------------------
+\newpage
+\section{DVD}\label{dvd}
+\textbf{DVD mit folgendem Inhalt:}
+\begin{itemize}\setlength\itemsep{0em}\setlength\parskip{0em}
+%
+ \item eine \emph{pdf}-Version der vorliegenden Bachelorarbeit
+ \item die \LaTeX- und Grafik-Quelldateien der vorliegenden Bachelorarbeit samt aller verwendeten Skripte
+ \item \textbf{[anpassen]} die Quelldateien der im Rahmen der Bachelorarbeit erstellten Software XYZ
+ \item \textbf{[anpassen]} den zur Auswertung verwendeten Datensatz
+ \item die Websites der verwendeten Internetquellen
+\end{itemize}
+
+\todotext{Update!}
+
+%-----------------------------------------------------------------------
+%\newpage
+%-----------------------------------------------------------------------
+\vfill
+
+\begin{center}
+  \vspace{-3cm}
+  \fbox{\parbox[c][12cm][c]{12cm}{\centering Hier die H\"ulle\\[1cm]mit der CD/DVD einkleben}}
+\end{center}
+
+%-----------------------------------------------------------------------
+% Notiz: PDF in TeX einbinden
+%-----------------------------------------------------------------------
+% \includepdf[pages=1-10, width=1.00\textwidth, pagecommand=\section*{KAPITEL}\label{anhang-XYZ}, noautoscale=true, frame=false]{working-out/XYZ.pdf}
