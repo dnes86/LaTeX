@@ -1,0 +1,205 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Thesis:	
+% Thema:	
+% Name:		
+% e-Mail:	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%-----------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% BEGINN MAKROS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-----------------------------------------------------------------------
+% Definieren der Dokumentklasse / Papierformat 
+%-----------------------------------------------------------------------
+\documentclass[			% Standard-Dokument mit
+		a4paper,		% Papierformat A4 (210x297mm)
+		12pt,			% Schrift 12-Punkt
+		twoside,		% zweiseitig 
+		BCOR12mm,		% Bindekorrektur, bei zweiseitigen der innere Rand
+		DIV12,			% Seitenränder
+		headsepline,		% Trennlinie nach der Kopfzeile
+		cleardoubleempty,	% Kopf- und Fusszeilen bei leeren Seiten ausblenden
+		chapterprefix,		% vor der Kapitelnummer in der Überschrift das Wort 'Kapitel' setzen 
+		parskip,		% bestimmt die Größe eines Absatzes
+		liststotoc,		% Verzeichnisse ins Inhaltsverzeichnis aufnehmen
+	     % idxtotoc,		% Index ins Inhaltsverzeichnis aufnehmen
+		bibtotoc,		% Literaturverzeichnis ins Inhaltsverzeichnis aufnehmen
+		final			% Status des Dokuments (final/draft)
+					% draft: Overfull Boxes anzeigen & keine Grafiken einbinden
+	      ]{scrbook}	% Dokumentklasse 'scrbook' für die Abschlussarbeit
+			
+
+%-----------------------------------------------------------------------
+%\usepackage[iso]{umlaute}			% Zeichencodierung											
+%\usepackage[latin1]{inputenc}			% für UNIX und auch Windows-Systeme
+%\usepackage[ansinew]{inputenc}			% für Windows-Systeme
+%\usepackage[applemac]{inputenc} 		% für MacOSX-Systeme
+\usepackage[utf8]{inputenc} 			% für Linux-Systeme
+%\usepackage[utf8x]{inputenc} 			% ist eine Alternative für alle obigen Systeme
+
+\usepackage[T1]{fontenc}			% Korrektes Trennen von Wörtern mit Umlauten, Sonderzeichen, etc.
+\usepackage[english, ngerman]{babel}		% english & deutsch, neue Rechtschreibung bzw. neue Silbentrennung
+\usepackage[german]{varioref} 			% Referenzierung mit variablen Texten
+\usepackage{bibgerm} 				% um ein deutschsprachiges Literaturverzeichnis zu haben
+
+\usepackage[scaled=0.92]{helvet}
+\usepackage{courier}				% Schriftart "Courier"
+\usepackage{textcomp}	 			% Zusatzliche Symbole (Euro-Zeichen etc.)
+
+\usepackage{color, xcolor, colortbl}		% Erweitertes Farbpaket mit vielen Farbmodellen
+\usepackage{graphicx}				% Grafiken bzw. Bilder einbinden
+\usepackage{subfigure} 				% mehrere Abbildungen nebeneinander/übereinander
+\graphicspath{{figures/}}			% Festlegung des Pfades zu den Bildern
+\DeclareGraphicsExtensions{.png,.pdf,.eps}	% Dateiendung für Bilder
+\usepackage{pdfpages}                           % PDF Seiten einfügen
+\usepackage{grffile}
+\usepackage{here}                               % Bild an einer bestimmten stelle zu haben [H]
+
+\usepackage{setspace}		% ermöglicht ein einfaches Umstellen von Zeilenabstand 1.0, 1.5 oder 2
+\usepackage[plainpages=false,pdfpagelabels=true]{hyperref} % anklickbares Inhaltsverzeichnis
+\usepackage{cite}
+\usepackage{paralist}           % für die compactenum Aufzählung
+\usepackage{enumitem}
+
+%\usepackage{makeidx}		% Indexerstellung
+%\usepackage{nomencl}		% ist ein Makro, welches mit Hilfe von MakeIndex ein Abkürzungsverzeichnis erstellt
+
+%\setcapindent{1em}		% KOMA-Script Option, Zeilenumbruch bei Bildbeschreibungen
+\usepackage{scrhack}		% Paket 'scrhack' verbessert neben hyperref auch andere Pakete und kann
+				  % auch mit anderen Klassen als den KOMA-Script-Klassen verwendet werden.
+																			
+%\usepackage{lscape}		% z.B. für Tabellen oder Abbildungen
+%\usepackage{pdflscape}		% Rotieren von Seiten 
+%\usepackage{rotating}		% Rotieren von Text, Tabellen
+%\usepackage{a4wide} 		% ganze A4 Weite verwenden
+
+
+
+%-----------------------------------------------------------------------
+% Befehle für Zeichen[ketten]
+%-----------------------------------------------------------------------
+\newcommand{\todotext}[1]{{\color{red} TODO: #1} \normalfont}	% Befehl:  \todotext{text}
+\newcommand{\abs}[1]{\textbf{#1:}}
+\newcommand{\CLI}[1]{\texttt{#1}} % Schreibmaschinenschrift (command-line interface / Konsole / Terminal) 
+%\hyphenpenalty=10000		  % Silbentrennung bis zum Dokumentenende ausschalten
+\usepackage{blindtext}		  % Platzhaltertext generieren 
+
+
+
+%-----------------------------------------------------------------------
+% Befehle für Tabellen
+%-----------------------------------------------------------------------
+\usepackage{tabularx}		% Tabellen haben eine feste Gesamtbreite haben und eine variable Spaltenbreite
+%\usepackage{ltxtable}		% Tabellen haben keine feste Gesamtbreite haben und keine variable Spaltenbreite
+\usepackage{multirow} 		% Tabellen-Zellen über mehrere Zeilen
+\usepackage{multicol} 		% mehre Spalten auf eine Seite
+\usepackage{booktabs} 		% um korrekt gesetzte, Schöne Tabellen zu erzeugen mit \toprule, \midrule, \bottomrule
+%\usepackage{longtable} 	% Für Tabellen, die länger als eine Seite sind. Seitenumbruch erfolgt automatisch.
+%\usepackage{array}		% Paket für erweiterte Tabelleneigenschaften
+%\usepackage{float}		% Paket unterstützt bei der Positionierung von Grafiken und Tabellen
+
+
+
+%-----------------------------------------------------------------------
+% Befehle für Mathematiksatz
+%-----------------------------------------------------------------------
+\usepackage{amsmath}		% Es wird das AMS-Paket verwendet
+\makeatletter
+\def\displaymath{\typeout{*** Do not use DISPLAYMATH. Use \[...\] instead ***}}
+\def\eqnarray{\typeout{*** Do not use EQNARRAY(*). Use align(*)-environment instead ***}}
+\makeatother
+\usepackage{amsfonts}		% math fonts
+\usepackage{amstext}
+\usepackage{mathptmx}
+%\usepackage{calc}		% Rechnen in TeX
+%\usepackage{dsfont}
+%\usepackage{mathtools}
+%\usepackage{latexsym}
+%\usepackage{amsthm} 		% AMS-Pakete fuer Theoreme
+%\usepackage{amscd}
+\usepackage{amssymb}		% Häkchen mit \checkmark zum Abhaken
+%\usepackage{framed} 
+
+
+
+%-----------------------------------------------------------------------
+% Einstellungen des Outputs des PDF-Dokuments	
+%-----------------------------------------------------------------------
+\usepackage{ifpdf}
+
+\pdfcompresslevel=9		% beste Kompressionlevel
+\pdfoutput=1			% ist n > 0 wird eine pdf-Datei erzeugt
+				% ist n = 0 wird eine dvi-Datei erzeugt
+	
+\pdfpkresolution=2400		% für Drucker mit 2400 dpi (Standard: 600 dpi)
+
+\ifpdf
+    \definecolor{brown}{cmyk}{0, 0.81, 1, 0.60}
+	\hypersetup{
+%		pdftex=true,			%
+%		draft=true,			% hyperref-Paket abschalten
+%		backref=true,			% Rücklinks von bibitem, erfordert Leerzeile nach jedem bibitem
+%		pagebackref=true,
+		breaklinks=true,		% Zeilenumbruch bei Links
+		plainpages=false,		% Fehlermeldungen reduzieren
+%
+	%---------------------------
+	% Adobe Reader Anzeigeoptionen
+	%---------------------------
+%		bookmarks=true,            	% Acrobat-Lesezeichen einfügen
+%   		bookmarksopen=true,        	% Acrobat-Lesezeichen links geöffnet
+		bookmarksopenlevel=section,	% Geöffnete Hierarchiestufe (section OR 1)
+   		bookmarksnumbered=true,  	% Kapitelnummern für Lesezeichen
+		%	
+ 		pdfstartview=FitV, 		% PDF-Viewer benutzt beim Start bestimmte Seitenbreite (Fit, FitH, FitV, FitR, FitB, FitBH)
+		pdfpagelayout=OneColumn,	% Seitendarstellung (SinglePage, OneColumn, TwoPageLeft, TwoPageRight)
+		pdfpagemode=UseOutlines,	% Verhalten beim Öffnen des PDF:
+						  %  UseOutlines  Zeige Lesezeichen (Standard)
+                                   	  	  %  UseThumbs    Zeige Seitenvorschau
+                                   	  	  %  FullScreen   Vollbid
+%		
+		pdflang=de,			% Sprache des Dokuments
+		pdfdisplaydoctitle=true,	% Dokumenttitel statt Dateiname anzeigen
+		pdfstartpage={1},       	% Seite, die angezeigt wird
+		pdfhighlight={/O},		% Effekt beim selektieren eines Linktextes (O: Umrandung des Textes | N, I, O, P)
+%		pdftoolbar=false,     		% Acrobat’s toolbar (true/false)
+%		pdfmenubar=false,        	% Acrobat’s menu (true/false)
+%		pdffitwindow=false,     	% PDF ins Fenster einpassen
+%		pdfnewwindow=true,		%
+%
+	%---------------------------
+	% Diese Farbdefinitionen zeichnen Links im PDF farblich aus
+	%--------------------------- Notiz: für den Druck sollte am besten alles schwarz verwendet werden
+		colorlinks=true,   		% aktiviert farbige Referenzen / true = farbige Links, false = Rahmen
+   		linkcolor=black,		% Farbe für Links auf gleicher Seite (Notiz: black OR {0 0 0})
+    		citecolor=brown,		% Farbe für Links auf Zitatstellen
+		filecolor=magenta,		% Farbe für Links auf Dateien (Verknüpfungen, die lokale Dateien öffnen)
+		urlcolor=blue,			% Farbe für Links (nicht nur URLs) / black, cyan, magenta, etc.
+	  	anchorcolor=black,		% Farbe für Anker
+		menucolor=red,             	% Farbe für Acrobatmenüeinträge
+%		linkbordercolor={1 0 0},			
+%		citebordercolor={0 1 0},
+%		menubordercolor={1 1 0},
+%		pagecolor=red,
+%
+	%---------------------------
+	% PDF-Datei-Informationen
+	%---------------------------
+	  	baseurl={http://www.URL.de},			% URL			
+		pdftitle={TITEL},                               % Titel des PDF Dokuments
+		pdfsubject={THEMA},				% Thema des PDF Dokuments
+  		pdfauthor={NAME},				% Autor des PDF Dokuments
+  		pdfcreator={pdflatex},				% Erzeuger des PDF Dokuments
+		pdfproducer={LaTeX with hyperref},	
+  		pdfkeywords={STICHWÖRTER}		        % werden von Suchmaschinen auch für PDF Dokumente indexiert
+	}			
+\else   
+\fi
+
+
+%--------------------------------------------------------------------------------
+% erstelle eine liste der verwendeten Klassen, Paketen, Dateien und deren Version
+%--------------------------------------------------------------------------------
+\listfiles	
